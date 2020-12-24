@@ -1,0 +1,18 @@
+extract obj_props;
+import "binaryCalculator.spwn";
+
+decimal = ?i;
+decimalCounter = counter(decimal);
+calculator = @binaryCalculator::new(16, 300, 300);
+
+$.add(obj {
+    OBJ_ID: 1615,
+    X: 300,
+    Y: 330,
+    ITEM: decimal,
+    GROUPS: 999g
+});
+
+decimalCounter = 64576;
+wait(1);
+calculator.prettyDecimalToBinary(decimalCounter);
