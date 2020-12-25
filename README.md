@@ -37,17 +37,19 @@ binaryCalculator.binaryToDecimal(target: @counter);
 A conversion method to convert the source into binary which is stored in the provided bits.
 
 ```swift
-binaryCalculator.decimalToBinary(source: @counter);
+binaryCalculator.decimalToBinary(source: @counter, calcSpeed: @number = 5);
 ```
 
 - source: The counter source
+- calcSpeed: The speed at which it divides. Higher speed is more trigger heavy
 
 ### prettyDecimalToBinary
 
 A slower but more interesting and clear version of [decimalToBinary](#decimalToBinary) showing how the number iterates through its division cycles. This uses less logic so it can handle larger numbers without exceeding the group limit.
 
 ```swift
-binaryCalculator.prettyDecimalToBinary(source: @counter);
+binaryCalculator.prettyDecimalToBinary(source: @counter, calcSpeed: @number = 10);
 ```
 
 - source: The counter source
+- calcSpeed: The speed at which it divides. Higher speed is more trigger heavy

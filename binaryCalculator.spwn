@@ -36,7 +36,7 @@ impl @binaryCalculator {
             }
         }
     },
-    decimalToBinary: (self, source: @counter) {
+    decimalToBinary: (self, source: @counter, calcSpeed: @number = 5) {
         let tempcounters = [];
 
         for i in ..self.bitCounters.length {
@@ -47,14 +47,14 @@ impl @binaryCalculator {
 
         for i in ..self.bitCounters.length {
             -> () {
-                tempcounters[i].divide(2 ^ i, speed = 5);
-                tempcounters[i].divide(2, remainder = self.bitCounters[self.bitCounters.length - 1 - i], speed = 3);
+                tempcounters[i].divide(2 ^ i, speed = calcSpeed);
+                tempcounters[i].divide(2, remainder = self.bitCounters[self.bitCounters.length - 1 - i], speed = calcSpeed);
             }();
         }
     },
-    prettyDecimalToBinary: (self, source: @counter) {
+    prettyDecimalToBinary: (self, source: @counter, calcSpeed: @number = 10) {
         for i in ..self.bitCounters.length {
-            source.divide(2, remainder = self.bitCounters[self.bitCounters.length - 1 - i], speed = 10);
+            source.divide(2, remainder = self.bitCounters[self.bitCounters.length - 1 - i], speed = calcSpeed);
         }
 
         self.binaryToDecimal(source);
